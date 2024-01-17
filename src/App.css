@@ -1,7 +1,11 @@
-.App {
+ .App {
   text-align: center;
+  background-color: rgb(77, 38, 233);
+  height: 100%;
 }
 
+
+/*
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,4 +39,60 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+.app_login{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+  justify-items: start;
+  width: 100%;
+  height: 100vh;
+}
+
+@media only screen and (max-width: 768px) {
+  .loginForm{
+    width: 100%;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: white;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .loginForm{
+    width: 30%;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: white;
+  }
+}
+
+/* .loginForm{
+  width: 40%;
+  height: 50%;
+  border-radius: 20px;
+  background-color: black;
+  padding: 10px;
+}  */
+
+.app_login input[type='text'], input[type='password']{
+   width: 100%;
+   border-color: black;
+}
+
+.loginForm label{
+  float: left;
+  color: black;
+}
+
+.forget_password {
+  color: white;
+}
+
+.forget_password a {
+  color: lightblue;
+  text-decoration: none;
 }
