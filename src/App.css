@@ -1,7 +1,8 @@
  .App {
   text-align: center;
   background-color: rgb(77, 38, 233);
-  height: 100%;
+  height: 100vh;
+  width: 100%;
 }
 
 
@@ -48,35 +49,42 @@
   align-items: center;
   justify-content: center;
   justify-items: start;
-  width: 100%;
+  width: 100vh;
   height: 100vh;
 }
 
 @media only screen and (max-width: 768px) {
+
   .loginForm{
     width: 100%;
     border-radius: 20px;
     padding: 10px;
     background-color: white;
   }
+
+  .container_wrap .sidebar .list_item span {
+    margin-left: 10px;
+    font-size: 10px;
+   }
+
 }
 
 @media only screen and (min-width: 768px) {
+
   .loginForm{
     width: 30%;
     border-radius: 20px;
     padding: 10px;
     background-color: white;
   }
-}
 
-/* .loginForm{
-  width: 40%;
-  height: 50%;
-  border-radius: 20px;
-  background-color: black;
-  padding: 10px;
-}  */
+  /* DASHBOARD */
+  .container_wrap .sidebar .list_item span {
+    margin-left: 10px;
+    font-size: 13px;
+ }
+
+}
 
 .app_login input[type='text'], input[type='password']{
    width: 100%;
@@ -85,7 +93,7 @@
 
 .loginForm label{
   float: left;
-  color: black;
+  color: grey;
 }
 
 .forget_password {
@@ -95,4 +103,110 @@
 .forget_password a {
   color: lightblue;
   text-decoration: none;
+}
+
+/* DASHBOARD */
+.content{
+   display: flex;
+   flex-direction: column;
+}
+
+.container_wrap {
+   display: flex;
+   flex-direction: row;
+}
+
+.container_wrap .sidebar {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0px 30px 0px 0px;
+  align-items: center; 
+  background-color: rgb(77, 38, 233);
+  width: 30vh;
+  height: 100vh;
+  padding: 10px;
+}
+
+.container_wrap .sidebar_1 {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0px 30px 0px 0px;
+  align-items: flex-start; 
+  background-color: rgb(77, 38, 233);
+  width: 10vh;
+  height: 100vh;
+  padding: 5px;
+}
+
+.container_wrap .sidebar ul > li {
+   list-style-type: none;
+   color: white;
+   padding: 5px;
+}
+
+.container_wrap .sidebar , .sidebar_1 , .list_item {
+  color: white;
+  padding: 7px;
+}
+
+/* .container_wrap .sidebar .list_item span {
+   margin-left: 10px;
+   font-size: 13px;
+} */
+
+.container_wrap .sidebar .list_item span :hover {
+  color: red;
+}
+
+.content {
+   width: 100%;
+   margin-left: 10px;
+   margin-right: 25px;
+}
+
+.content .top_home_user {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.content .top_home_user .user_details {
+  display: flex;
+  flex-direction: row;
+}
+
+.content .top_home_user .user_infos {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  margin-left: 10px;
+  color: gray;
+}
+
+.box_dash_parent div:nth-child(2n) {
+  background-color: rgb(77, 38, 233);
+  color: white; /* Change to the desired text color */
+}
+
+.box_dash {
+   /* background-color: rgb(77, 38, 233); */
+   box-shadow: 10px;
+   padding: 10px;
+   border-radius: 10px;
+   color: white;
+   margin-right: 1px;
+   display: flex;
+   flex-direction: row;
+   align-items: flex-start;
+}
+
+.order_item{
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   justify-items: center;
+   margin-right: 10px;
 }
