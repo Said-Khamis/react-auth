@@ -166,7 +166,7 @@
 
 .content .top_home_user {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
   justify-content: space-between;
   width: 100%;
   margin-top: 10px;
@@ -186,21 +186,22 @@
   color: gray;
 }
 
-.box_dash_parent div:nth-child(2n) {
+/* .box_dash_parent div:nth-child(2n) {
   background-color: rgb(77, 38, 233);
-  color: white; /* Change to the desired text color */
-}
+  color: white;
+} */
 
 .box_dash {
-   /* background-color: rgb(77, 38, 233); */
+   background: linear-gradient(rgb(77, 38, 233) , rgb(55, 38, 139));
    box-shadow: 10px;
-   padding: 10px;
+   padding: 15px;
    border-radius: 10px;
    color: white;
    margin-right: 1px;
    display: flex;
    flex-direction: row;
    align-items: flex-start;
+   /* justify-content: space-evenly; */
 }
 
 .order_item{
@@ -208,5 +209,17 @@
    flex-direction: column;
    align-items: flex-start;
    justify-items: center;
-   margin-right: 10px;
+   margin-left: 10px;
+}
+
+.box_dash_orders{
+  background: linear-gradient(rgba(233, 100, 38,0.9) , rgba(161, 64, 19,0.9));
+}
+
+.box_dash_items{
+  background: linear-gradient(rgb(17, 190, 55) , rgb(9, 90, 26));
+}
+
+.box_dash_clients{
+  background: linear-gradient(rgb(220,20,60)  , rgb(156, 34, 34));
 }
