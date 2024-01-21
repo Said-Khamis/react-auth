@@ -20,6 +20,7 @@ const DashboardContent = () => {
             </div>
           </div>
         </div>
+
         <div className='col-sm-3'>
           <div className='box_dash box_dash_users'>
             <AiOutlineShoppingCart size={60} color='white' />
@@ -49,6 +50,33 @@ const DashboardContent = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className='container mt-4'>
+         <table className='table table-stripted'>
+            <thead>
+               <tr>
+                  <th>#</th>
+                  <th>Order No</th>
+                  <th>Date</th>
+                  <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+               <tr>
+                  <td>1</td>
+                  <td>1</td>
+                  <td>1</td>
+                  <td>1</td>
+               </tr>
+               <tr>
+                  <td>1</td>
+                  <td>1</td>
+                  <td>1</td>
+                  <td>1</td>
+               </tr>
+            </tbody>
+         </table>
       </div>
 
     </div>
