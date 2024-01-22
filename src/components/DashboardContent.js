@@ -11,6 +11,7 @@ const DashboardContent = () => {
   return (
     <div className='container-fluid mt-3'>
       <div className='row g-1 box_dash_parent'>
+
         <div className='col-sm-3'>
           <div className='box_dash box_dash_orders'>
             <AiTwotoneShopping size={60} color='white' />
@@ -20,6 +21,7 @@ const DashboardContent = () => {
             </div>
           </div>
         </div>
+
         <div className='col-sm-3'>
           <div className='box_dash box_dash_users'>
             <AiOutlineShoppingCart size={60} color='white' />
@@ -49,6 +51,7 @@ const DashboardContent = () => {
             </div>
           </div>
         </div>
+        
       </div>
 
     </div>
