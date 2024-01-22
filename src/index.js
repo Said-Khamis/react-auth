@@ -3,8 +3,13 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import axios from 'axios';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+axios.defaults.baseURL = "http://192.168.100.14:8080/api";
+axios.defaults.withCredentials = true;
+axios.defaults.withXSRFToken = true;
+
 root.render(
   <React.StrictMode>
     <App />
