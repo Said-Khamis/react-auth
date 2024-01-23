@@ -1,9 +1,12 @@
 import React from 'react'
-import Home from './Home'
+//import Home from './Home'
 
 const Layout = () => {
   return (
-    <Home />
+    <div>
+      <h1>Layout</h1>
+    </div>
+    // <Home />
   )
 }
 

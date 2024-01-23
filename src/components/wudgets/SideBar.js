@@ -19,12 +19,12 @@ const SideBar = ({ isClosed }) => {
                               <AiFillHome size={20} />  <span> Home </span>
                             </div>
                         </Link>
-                        <Link to="/">
+                        <Link to="/manageusers">
                             <div className='list_item'>
                               <AiOutlineUsergroupAdd  size={20} />  <span> Manage User(s) </span>
                             </div>
                         </Link>
-                        <Link to="/">
+                        <Link to="/settings">
                             <div className='list_item'>
                                 <AiFillSetting size={20} />  <span> Settings </span>
                             </div>

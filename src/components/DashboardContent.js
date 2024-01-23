@@ -88,7 +88,7 @@ const DashboardContent = () => {
       </div>
 
       <div className='container mt-4'>
-         <table className='table table-stripted'>
+         <table className='table table-dark table-striped'>
             <thead>
                <tr>
                   <th>#</th>
