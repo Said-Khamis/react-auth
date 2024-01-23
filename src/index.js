@@ -7,7 +7,7 @@ import axios from 'axios';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 axios.defaults.baseURL = "http://192.168.100.14:8080/api";
-axios.defaults.withCredentials = true;
+axios.defaults.withCredentials = false;
 axios.defaults.withXSRFToken = true;
 
 root.render(

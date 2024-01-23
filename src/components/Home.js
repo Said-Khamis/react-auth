@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import Logo from './wudgets/Logo';
-import { AiFillHome , AiFillSetting , AiOutlineUsergroupAdd  } from "react-icons/ai";
 import DashboardTop from './DashboardTop';
-import { Link, Navigate } from 'react-router-dom';
+import {  Navigate } from 'react-router-dom';
 import DashboardContent from './DashboardContent';
-import useWindowSize from '../custom/useWindowSize';
 import SideBar from './wudgets/SideBar';
 
 const Home = () => {
   
   const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem("token"));
+  const [isClosed , setClosed ] = useState(false);
+
+  function closeSideBar() {
+    setClosed(!isClosed); 
+  }
 
   useEffect(() => {
       const token = localStorage.getItem("token");
@@ -22,22 +24,24 @@ const Home = () => {
        } else {
          setIsLoggedIn(false);
        }
+  },[isLoggedIn ]);
 
-  },[isLoggedIn]);
-
- 
+  
 
   if (!isLoggedIn) {
       return <Navigate replace to="/"/>;
   } 
 
+
   return (
     <div className='layout_dashboard'>
        <div className='container_wrap'>
-           <SideBar />
+           <SideBar isClosed={isClosed}/>  
            <div className='content'>
                <DashboardTop handleCLick={closeSideBar}/>
-               <DashboardContent />
+               <div className='content_body'>
+                  <DashboardContent />
+               </div>
            </div>
        </div>
     </div>

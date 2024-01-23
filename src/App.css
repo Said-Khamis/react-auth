@@ -105,15 +105,27 @@
   text-decoration: none;
 }
 
-/* DASHBOARD */
-.content{
-   display: flex;
-   flex-direction: column;
+/*---- DASHBOARD -----*/
+.layout_dashboard {
+  display: flex;
+  height: 100vh; 
 }
 
 .container_wrap {
    display: flex;
    flex-direction: row;
+   flex: 1;  /* Grow to take remaining space */
+}
+
+.content {
+  flex: 1; /* Take remaining space */
+  padding-left: 30vh; /* Adjust padding to accommodate the sidebar width */
+}
+
+.content_body {
+  overflow-y: auto; /* Enable vertical scrolling if content exceeds the height */
+  padding: 20px; /* Add padding as needed */
+  flex: 1; /* Take remaining space */
 }
 
 .container_wrap .sidebar {
@@ -125,6 +137,10 @@
   width: 30vh;
   height: 100vh;
   padding: 10px;
+  position: fixed;
+  flex-shrink: 0; /* Prevent sidebar from shrinking */
+  overflow-y: auto; /* Enable vertical scrolling if content exceeds the height */
+  border-right: 1px solid #ccc;
 }
 
 .container_wrap .sidebar_1 {
@@ -136,6 +152,10 @@
   width: 10vh;
   height: 100vh;
   padding: 5px;
+  position: fixed;
+  flex-shrink: 0; /* Prevent sidebar from shrinking */
+  overflow-y: auto; /* Enable vertical scrolling if content exceeds the height */
+  border-right: 1px solid #ccc;
 }
 
 .container_wrap .sidebar ul > li {
@@ -162,6 +182,7 @@
    width: 100%;
    margin-left: 10px;
    margin-right: 25px;
+  height: 100vh;
 }
 
 .content .top_home_user {
@@ -170,11 +191,13 @@
   justify-content: space-between;
   width: 100%;
   margin-top: 10px;
-  margin-bottom: 10px;
   padding: 10px;
   box-shadow: 0px 1px 1px 0px rgba(0, 0, 0,0.2);
-  /* background-color: aqua; */
-  padding: 15px;
+  position: sticky;
+  top: 0;
+  background-color: #ffffff; /* Set a background color if needed */
+  z-index: 100; /* Set a z-index to ensure it appears above other elements */
+  padding: 10px;
 }
 
 .content .top_home_user .user_details {
@@ -239,4 +262,10 @@ div .alert-danger{
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+
+.content_body {
+   overflow: auto;
+   position: relative;
+   width: 100%;
 }

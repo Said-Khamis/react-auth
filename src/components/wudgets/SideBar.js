@@ -1,13 +1,12 @@
-import React from 'react'
+import React from 'react';
+import Logo from '../../components/wudgets/Logo';
+import { AiFillHome , AiFillSetting , AiOutlineUsergroupAdd  } from "react-icons/ai";
+import { Link } from 'react-router-dom';
+import useWindowSize from '../../custom/useWindowSize';
 
-const SideBar = () => {
+const SideBar = ({ isClosed }) => {
 
- const [isClosed , setClosed] = useState(false);
  const size = useWindowSize();
-
- function closeSideBar() {
-    setClosed(!isClosed); 
-  }
   
   return (
     <>
@@ -48,11 +47,11 @@ const SideBar = () => {
                         <AiFillSetting size={30} /> 
                       </div>
                   </div>
-             </div>
+               </div>
                )
-             }
+          }
     </>
   )
 }
 
-export default SideBar
+export default SideBar;

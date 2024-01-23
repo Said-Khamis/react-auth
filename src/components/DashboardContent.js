@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect , useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import axios from 'axios';
 
 import { 
   AiTwotoneShopping , 
@@ -8,6 +9,38 @@ import {
 } from 'react-icons/ai';
 
 const DashboardContent = () => {
+  const [users , setUser ] = useState([]);
+
+  useEffect(() => {
+      getUsers();
+  }, []);
+
+  const getUsers = async() => {
+    await axios({
+       url: "/users",
+       method: "GET",
+       responseType: "json",
+    }).then((response) => {
+      console.log("response");
+      console.log(response);
+      setUser(response.data);
+     }).catch((error) => {
+        console.log("Error");
+        console.log(error);
+     });
+  }
+ 
+  const userLists  = users.map((user , index) => {
+    return (
+       <tr>
+         <td>{user.id}</td>
+         <td>{user.name}</td>
+         <td>{user.email}</td>
+         <td>{user.created_at}</td>
+      </tr>
+     );  
+   });
+
   return (
     <div className='container-fluid mt-3'>
       <div className='row g-1 box_dash_parent'>
@@ -65,18 +98,7 @@ const DashboardContent = () => {
                 </tr>
             </thead>
             <tbody>
-               <tr>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>1</td>
-               </tr>
-               <tr>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>1</td>
-               </tr>
+               { userLists }
             </tbody>
          </table>
       </div>
