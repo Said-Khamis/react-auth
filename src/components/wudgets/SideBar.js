@@ -12,7 +12,9 @@ const SideBar = ({ isClosed }) => {
     <>
         { !isClosed & size.width > 600 ?  (
                 <div className='sidebar mt-0' >
+                  <Link to="/">
                     <Logo width={120} height={120} />
+                  </Link>
                     <div className='list_div'>
                         <Link to="/">
                             <div className='list_item'>
@@ -34,7 +36,9 @@ const SideBar = ({ isClosed }) => {
                ) : (
                 <div className='sidebar_1 mt-0' >
                   <div className='mt-3 mb-3'>
-                      <Logo width={40} height={40} />
+                     <Link to='/'>
+                       <Logo width={40} height={40} />
+                     </Link>
                   </div>
                   <div className='list_div'>
                       <div className='list_item'>

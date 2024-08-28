@@ -18,7 +18,6 @@ function App() {
           <Route path='/manageusers' element={ <ManageUser /> }/>
           <Route path='/settings' element={ <Settings /> }/>
           <Route path='/' element={ <Layout/> }/>
-
       </Routes>
    </Router>
   );

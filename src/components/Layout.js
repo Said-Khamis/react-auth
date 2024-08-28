@@ -1,12 +1,27 @@
-import React from 'react'
-//import Home from './Home'
+import React , { useState } from 'react'
+import SideBar from './wudgets/SideBar'
+import DashboardTop from './DashboardTop'
 
-const Layout = () => {
+const Layout = ({ children }) => {
+
+  const [isClosed , setClosed ] = useState(false);
+
+  function closeSideBar() {
+    setClosed(!isClosed); 
+  }
+
   return (
-    <div>
-      <h1>Layout</h1>
+    <div className='layout_dashboard'>
+    <div className='container_wrap'>
+        <SideBar isClosed={isClosed}/>  
+        <div className='content'>
+            <DashboardTop handleCLick={closeSideBar}/>
+            <div className='content_body'>
+               {children}
+            </div>
+        </div>
     </div>
-    // <Home />
+ </div>
   )
 }
 

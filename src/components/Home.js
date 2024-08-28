@@ -1,17 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import DashboardTop from './DashboardTop';
 import {  Navigate } from 'react-router-dom';
+import Layout from './Layout';
 import DashboardContent from './DashboardContent';
-import SideBar from './wudgets/SideBar';
 
 const Home = () => {
   
   const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem("token"));
-  const [isClosed , setClosed ] = useState(false);
-
-  function closeSideBar() {
-    setClosed(!isClosed); 
-  }
+ 
 
   useEffect(() => {
       const token = localStorage.getItem("token");
@@ -34,6 +29,13 @@ const Home = () => {
 
 
   return (
+     <Layout>
+        <DashboardContent />
+     </Layout>
+  );
+
+  /*
+  return (
     <div className='layout_dashboard'>
        <div className='container_wrap'>
            <SideBar isClosed={isClosed}/>  
@@ -46,6 +48,7 @@ const Home = () => {
        </div>
     </div>
   );
+  */
 }
 
 export default Home;
