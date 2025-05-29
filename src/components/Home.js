@@ -7,7 +7,6 @@ const Home = () => {
   
   const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem("token"));
  
-
   useEffect(() => {
       const token = localStorage.getItem("token");
       console.log("token");

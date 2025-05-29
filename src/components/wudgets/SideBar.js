@@ -10,7 +10,7 @@ const SideBar = ({ isClosed }) => {
   
   return (
     <>
-        { !isClosed & size.width > 600 ?  (
+        { !isClosed && size.width > 600 ?  (
                 <div className='sidebar mt-0' >
                   <Link to="/">
                     <Logo width={120} height={120} />

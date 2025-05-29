@@ -1,6 +1,6 @@
 import React, { useState , useEffect } from "react";
 import Logo from "./wudgets/Logo";
-import { Link , Navigate, useNavigate } from "react-router-dom";
+import { Link , Navigate, useNavigate  } from "react-router-dom";
 import axios from "axios";
 
 const Login  = () => {
@@ -8,7 +8,7 @@ const Login  = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem("token"));
 
     const [userName , setUserName] = useState('');
-    const [passWord, setpassWord] = useState('');
+    const [passWord, setPassWord] = useState('');
     const [message, setMessage] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const navigate = useNavigate();
@@ -28,7 +28,7 @@ const Login  = () => {
     }
 
     const handlePasswordChanged = (event) => {
-        setpassWord(event.target.value);
+      setPassWord(event.target.value);
     }
 
     const login = async (event) => {
@@ -47,7 +47,7 @@ const Login  = () => {
             url: "/login",
             responseType: "json",
             data: {
-               username: userName,
+               name: userName,
                password: passWord,
             },
             withCredentials: false,
@@ -55,7 +55,7 @@ const Login  = () => {
              console.log("Responses");
              console.log(response.data);
              setIsLoading(false);
-             if(response.data.status === true ){
+             if(response.data.statusCode === 200 ){
                  localStorage.setItem("token", response.data.user.token);
                  localStorage.setItem("name", response.data.user.name);
                  localStorage.setItem("email", response.data.user.email);
